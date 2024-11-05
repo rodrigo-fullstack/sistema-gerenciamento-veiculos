@@ -7,7 +7,7 @@
 </head>
 <body>
     <main class="main-content">
-        <form action="script_cadastro.php" method="post">
+        <form action="script_cadastro.php" method="POST">
             <div class="input-row">
                 <label for="marca">Marca</label>
                 <input type="text" id="marca" name="marca">
