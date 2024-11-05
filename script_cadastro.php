@@ -7,3 +7,7 @@ $ano=$_POST["ano"];
 $cor=$_POST["cor"];
 $num_registro=$_POST["num_registro"];
 
+$sql = "INSERT INTO veiculos('marca', 'modelo', 'ano', 'cor', 'num_registro') 
+VALUES ($marca, $modelo, $ano, $cor, $num_registro)";
+
+$resultado = mysqli_query($connection, $sql);
