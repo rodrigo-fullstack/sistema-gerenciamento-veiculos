@@ -5,7 +5,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/../vendor/autoload.php' ;
 
 use Sgv\App\Config\Config;
-use Sgv\App\Core\Database;
+use Sgv\App\Core\BancoDeDados;
 use Sgv\App\Core\Controller;
 use Sgv\App\Core\App;
 

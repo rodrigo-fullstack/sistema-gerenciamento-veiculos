@@ -2,34 +2,36 @@
 declare(strict_types=1);
 
 //Definindo namespace para o models
-namespace Rodrigo\MvcPhpPuro\Core;
+namespace Sgv\App\Core;
 
 //Importando classe de Configuração
-use Rodrigo\MvcPhpPuro\Config\Config;
+use Sgv\App\Config\Config;
 
 //É necessário fazer import do PDO
 use PDO;
 use PDOException;
 
-class Database{
+// Criando classe básica para fazer operações no BD
+class BancoDeDados{
+
     //Definindo propriedades privadas com valores do BD capturados de config.php
-    private string $host = Config::DB_HOST;
-    private string $user = Config::DB_USER;
-    private string $passwd = Config::DB_PASS;
-    private string $dbname = Config::DB_NAME;
-    private string $dbport = Config::DB_PORT;
+    private string $servidorBd = Config::DB_HOST;
+    private string $usuarioBd = Config::DB_USER;
+    private string $senhaBd = Config::DB_PASS;
+    private string $nomeBd = Config::DB_NAME;
+    private string $portaBd = Config::DB_PORT;
 
 
-    private $dbh; //Manipulador do BD
-    private $stmt; //Script SQL
-    private $error; //Mensagem de Erro
+    private $mbd; //Manipulador do BD
+    private $sql; //Script SQL
+    private $erro; //Mensagem de Erro
 
 
     //Construtores inicializam as instâncias da classe: Iniciar conexão com BD
     public function __construct(){
 
-        //Data Source Name, nome que será fornecido no PDO
-        $dsn = "mysql:host={$this->host};dbname={$this->dbname};port={$this->dbport}";
+        //Data Source Name, nome que será fornecido no PDO para conexão
+        $dsn = "mysql:host={$this->servidorBd};dbname={$this->nomeBd};port={$this->portaBd}";
         // echo "DSN = ($dsn)";
 
         //PDO somente funciona com namespaces se for utilizado
@@ -41,42 +43,44 @@ class Database{
 
         //Tenta fazer uma conexão ao BD pelo PDO
         try{
-            $this->dbh = new PDO($dsn, $this-> user, $this-> passwd, $options);
+            $this->mbd = new PDO($dsn, $this-> usuarioBd, $this-> senhaBd, $options);
             // echo "Conexão com PDO ao {$this-> dbname}";
         } catch(PDOException $e){
             //Caso ocorra um erro o exibe...
-            $this-> error = $e-> getMessage();
-            echo $this-> error;
+            $this-> erro = $e-> getMessage();
+            echo $this-> erro;
         }
 
     }
 
     //Prepara consulta SQL
-    public function query($sql){
+    public function consulta($sql){
         //Mantém a consulta armazenada através do dbh (PDO) com o método prepare
-        $this->stmt = $this->dbh->prepare($sql);
+        $this->sql = $this->mbd->prepare($sql);
     }
 
-    public function execute(){
-        return $this->stmt->execute();
+    // Executa a consulta SQL preparada
+    public function executar(){
+        return $this->sql->execute();
     }
 
     //Captura todos os resultados em um array associativo
-    public function results(){
+    public function resultados(){
         //Fetch All retorna os resultados restantes de uma consulta
         //Não é muito aconselhável utilizar devido a problemas de desempenho
-        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $this->sql->fetchAll(PDO::FETCH_ASSOC);
     }
 
     //Captura um único resultado no array associativo
-    public function result(){
+    public function resultado(){
         //Pode ser importante para coletar pelo id
-        $this->execute();
-        return $this->stmt->fetch(PDO::FETCH_ASSOC);
+        $this->executar();
+        return $this->sql->fetch(PDO::FETCH_ASSOC);
 
     }
 
-    public function bind($param, $value){
-        $this->stmt->bindValue($param, $value);
+    // Vincula um atributo a um valor, importante para evitar problemas de SQL injection no servidor
+    public function vincular($param, $value){
+        $this->sql->bindValue($param, $value);
     }
 }

@@ -2,7 +2,7 @@
 CREATE DATABASE IF NOT EXISTS vehicle_management;
 USE vehicle_management;
 
-CREATE TABLE vehicles (
+CREATE TABLE veiculos (
   id int(11) NOT NULL AUTO_INCREMENT,
   marca varchar(255) NOT NULL,
   modelo varchar(255) NOT NULL,
