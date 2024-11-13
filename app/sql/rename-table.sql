@@ -1,0 +1,1 @@
+-- RENAME TABLE livro TO book; Não é necessário por agora

@@ -1,0 +1,26 @@
+{
+    "name": "sgv/app",
+    "description": "Sistema de Gerenciamento de Veículos da Equipe: Érica, Miqueias e Rodrigo",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sgv\\App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "VaporubDev",
+            "email": "vaporubdev@gmail.com"
+        },
+        {
+            "name": "miqueiassilva18",
+            "email": "miqueias020santos@gmail.com"
+        },
+        {
+            "name": "rodrigo-fullstack",
+            "email": "rodrigopereirafaria9@gmail.com"
+        }
+    ],
+    "require": {}
+}
