@@ -39,6 +39,6 @@ class Controladora{
         extract($data);
 
         //Inclui o layout básico
-        require_once '..\src\Views\layout.php';
+        require_once '..\app\Views\layout.php';
     }
 }

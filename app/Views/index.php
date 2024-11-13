@@ -1,5 +1,5 @@
 <?php
-    use Rodrigo\MvcPhpPuro\Config\Config;
+    use Sgv\App\Config\Config;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,12 +17,12 @@
     </header>
 
     <nav class="nav-selec">
-        <a href="<?=Config::BASE_URL?>books" class="nav-link">
-            Ver livros
+        <a href="<?=Config::BASE_URL?>veiculos" class="nav-link">
+            Ver veiculos
         </a>
 
-        <a href="<?=Config::BASE_URL?>book/add">
-            Cadastrar novo livro
+        <a href="<?=Config::BASE_URL?>veiculo/cadastrar">
+            Cadastrar novo Veiculo
         </a>
     </nav>
 </body>
