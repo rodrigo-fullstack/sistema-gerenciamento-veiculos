@@ -5,24 +5,25 @@ use Sgv\App\Config\Config;
 
 //Controlador específico dos livros
 class VeiculoControladora extends Controladora{
-    public function index(){
+    // Método para abrir o início da aplicação
+    public function inicio(){
         $this->renderizarView('index');
     }
 
-    //Exibe todos os livros
+    //Exibe todos os veiculos
     public function todosVeiculos(){
         //Carrega o modelo com o método da classe herdada
         $veiculoModel = $this->carregarModel("Veiculo");
 
-        //Extrai todos os livros da tabela através do método get do bookModel
+        //Extrai todos os veiculos da tabela através do método get do VeiculoModel
         $veiculos = $veiculoModel->pegarTodosVeiculos();
 
-        //Renderiza a view de todos os livros (Books.php)
+        //Renderiza a view de todos os Veiculos (Veiculos.php)
         $this->renderizarView('Veiculo/Veiculos', ['veiculos' => $veiculos]); //Envia também os dados obtidos através do método getAllBooks
 
     }
 
-    //Cadastra um livro novo
+    //Cadastra um veiculo novo
     public function cadastrarNovoVeiculo(){
         //Se receber um método POST do servidor
         if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -67,7 +68,7 @@ class VeiculoControladora extends Controladora{
     //Por algum motivo id está sendo enviado como string
     public function atualizar($id){
         //Carrega o modelo do Livro
-        $veiculoModel = $this->carregarModel("Book");
+        $veiculoModel = $this->carregarModel("Veiculo");
 
         if($_SERVER['REQUEST_METHOD'] == "POST"){
 

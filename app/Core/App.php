@@ -1,52 +1,52 @@
 <?php
 
-namespace Rodrigo\MvcPhpPuro\Core;
+namespace Sgv\App\Core;
 
-use Rodrigo\MvcPhpPuro\Routes\Routes;
+use Sgv\App\Routes\Rotas;
 // use Rodrigo\MvcPhpPuro\Controllers;
 
 
 class App{
-    protected $controller = 'BookController';
+    protected $controladora = 'VeiculoControladora';
 
-    protected $method = 'index';
+    protected $metodoControladora = 'index';
 
-    protected $params = [];
+    protected $parametrosURL = [];
 
     //Inicializa o aplicativo
     public function __construct(){
         //Retorna a url separada
-        $urlParts = $this->parseUrl();
+        $partesDaUrl = $this->analisarUrl();
 
         //Se a parte da url estiver definida:
-        if( isset($urlParts[0] ) ){
+        if( isset($partesDaUrl[0] ) ){
             //Pega a parte 1 da url
-            $route = $urlParts[0];
+            $rota = $partesDaUrl[0];
         }
 
         //Se a parte 2 da url também estiver definida:
-        if( isset($urlParts[1] ) ){
+        if( isset($partesDaUrl[1] ) ){
             //Pega a parte 1 da url e concatena separado por / a parte 2
-            $route = $urlParts[0] . '/' . $urlParts[1];
+            $rota = $partesDaUrl[0] . '/' . $partesDaUrl[1];
         }
 
         //Verifica se a rota existe
-        if(isset( Routes::ROUTES[$route] )){
+        if(isset( Rotas::ROTAS[$rota] )){
 
-            //Determina o nome da controladora a partir da classe Routes que possui o atributo constante ROUTES. acessando no array a propriedade da rota com o seu devido controller
-            $this->controller = Routes::ROUTES[$route]['controller'];
+            //Determina o nome da controladora a partir da classe Routes que possui o atributo constante ROUTES, acessando no array a propriedade da rota com o seu devido controller
+            $this->controladora = Rotas::ROTAS[$rota]['controladora'];
 
             // Determina o método da rota no mesmo sentido do de cima, acessando o método de acordo com a rota
-            $this->method = Routes::ROUTES[$route]['method'];
+            $this->metodoControladora = Rotas::ROTAS[$rota]['metodo'];
 
 
             //Divide os parâmetros da url, fica com o restante da url, ou seja, seus parâmetros
-            $this->params = array_slice($urlParts, 2);
+            $this->parametrosURL = array_slice($partesDaUrl, 2);
         }
         //Se não fazer parte das rotas
         else{
             //Exibe erro 404 de não ter encontrado a rota
-            echo '404 - ROUTE NOT FOUND';
+            echo '404 - ROTA NÃO ENCONTRADA';
             return;
         }
 
@@ -54,22 +54,22 @@ class App{
         // $caminhoController = $_SERVER['DOCUMENT_ROOT'] . '/loja-livros/src/Controllers/' . $this->controller . '.php';
 
         // Acessa o diretório atual, volta um diretório e acessa o controller
-        $caminhoController = __DIR__ . '/../Controllers/' . $this->controller . '.php';
+        $caminhoControladora = __DIR__ . '/../Controllers/' . $this->controladora . '.php';
 
         // Para resolver problema de instanciação de classes
-        $namespaceController = "Rodrigo\\MvcPhpPuro\\Controllers\\{$this->controller}";
+        $namespaceControladora = "Sgv\\App\\Controllers\\{$this->controladora}";
 
-        require_once $caminhoController;
+        require_once $caminhoControladora;
 
         // Inicia a controladora importada
-        $this->controller = new $namespaceController;
+        $this->controladora = new $namespaceControladora;
 
         // Chamada dos métodos da Controladora BookController
-        call_user_func_array([$this->controller, $this->method], $this->params);
+        call_user_func_array([$this->controladora, $this->metodoControladora], $this->parametrosURL);
     }
 
     //Divide a URL para o roteamento
-    private function parseUrl(){
+    private function analisarUrl(){
         //Verifica se 'url' está definida no método get (.htaccess realiza a transformação automaticamente)
         if( isset( $_GET['url'] ) ){
 
