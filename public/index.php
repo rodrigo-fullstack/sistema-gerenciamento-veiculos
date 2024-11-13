@@ -6,7 +6,7 @@ require_once __DIR__ . '/../vendor/autoload.php' ;
 
 use Sgv\App\Config\Config;
 use Sgv\App\Core\BancoDeDados;
-use Sgv\App\Core\Controller;
+use Sgv\App\Core\Controladora;
 use Sgv\App\Core\App;
 
 $app = new App();

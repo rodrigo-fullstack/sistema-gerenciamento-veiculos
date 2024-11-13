@@ -1,9 +1,9 @@
 <?php
 
-namespace Rodrigo\MvcPhpPuro\Core;
+namespace Sgv\App\Core;
 
 //Gerencia a forma com a qual o usuário utiliza a aplicação
-class Controller{
+class Controladora{
 
     //Controller será executado do public
 
@@ -11,18 +11,19 @@ class Controller{
     //Realiza a conexão com o BD através da instância do modelo, no caso Book.php
     /**
      * Resumo de loadModel
-     * @param mixed $model (deve ser nesse caso Book)
+     * @param mixed $model (deve ser nesse caso Veiculo)
      * @return object
      */
-    protected function loadModel ($model){
+    protected function carregarModel($model){
         //Realiza a importação
         require_once __DIR__ . '/../Models/' . $model . '.php';
 
         // Corrigindo problemas de instanciação
-        $namespaceModel = "Rodrigo\\MvcPhpPuro\\Models\\{$model}";
+        $namespaceModel = "Sgv\\App\\Models\\{$model}";
         //Instancia o objeto Book
         return new $namespaceModel;
     }
+
 
     //Renderiza a parte visual (view)
     /**
@@ -32,7 +33,7 @@ class Controller{
      * @param mixed $title (título opcional)
      * @return void
      */
-    protected function renderView($viewPath, $data = [], $title = "Book Store"){
+    protected function renderizarView($viewPath, $data = [], $title = "SGV"){
 
         //Divide o array em variáveis
         extract($data);
