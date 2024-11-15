@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title> <?= $title; ?> </title>
 
     <!-- Seria possível criar uma requisição HTTP com uma rota para os estilos? -->
     <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/root/root-form.css">
@@ -19,7 +19,7 @@
 </head>
 <body>
     <main class="main-content">
-        <form action="script_cadastro.php" method="post" class="form-container">
+        <form method="POST" class="form-container">
             <div class="title-content">
                 <label for="title">Cadastre seu veículo</label>
             </div>
