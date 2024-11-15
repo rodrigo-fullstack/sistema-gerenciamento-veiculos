@@ -4,7 +4,7 @@ namespace Sgv\App\Routes;
 
 class Rotas{
     const ROTAS = [
-        //Rota para verificar todos os livros
+        //Rota para o index
         '' => ['controladora' => 'VeiculoControladora', 'metodo' => 'inicio'],
 
         //Também verifica todos os livros

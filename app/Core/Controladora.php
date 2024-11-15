@@ -1,6 +1,7 @@
 <?php
 
 namespace Sgv\App\Core;
+use Sgv\App\Config\Config;
 
 //Gerencia a forma com a qual o usuário utiliza a aplicação
 class Controladora{
@@ -16,12 +17,11 @@ class Controladora{
      */
     protected function carregarModel($model){
         //Realiza a importação
-        require_once __DIR__ . '/../Models/' . $model . '.php';
-
+        require_once '../app/Models/' . $model . '.php';
         // Corrigindo problemas de instanciação
-        $namespaceModel = "Sgv\\App\\Models\\{$model}";
-        //Instancia o objeto Book
-        return new $namespaceModel;
+        $model = "Sgv\\App\\Models\\{$model}";
+        //Instancia o objeto Veiculo
+        return new $model;
     }
 
 

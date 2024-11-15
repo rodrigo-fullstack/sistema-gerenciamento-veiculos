@@ -9,7 +9,7 @@ use Sgv\App\Routes\Rotas;
 class App{
     protected $controladora = 'VeiculoControladora';
 
-    protected $metodoControladora = 'index';
+    protected $metodoControladora = 'inicio';
 
     protected $parametrosURL = [];
 
@@ -57,14 +57,17 @@ class App{
         $caminhoControladora = __DIR__ . '/../Controllers/' . $this->controladora . '.php';
 
         // Para resolver problema de instanciação de classes
-        $namespaceControladora = "Sgv\\App\\Controllers\\{$this->controladora}";
+        $controladora = "Sgv\\App\\Controllers\\{$this->controladora}";
 
         require_once $caminhoControladora;
 
         // Inicia a controladora importada
-        $this->controladora = new $namespaceControladora;
+        $this->controladora = new $controladora;
 
-        // Chamada dos métodos da Controladora BookController
+        // Chamada dos métodos da Controladora VeiculoControladora
+        // Função realizada chamada das funções com parâmetros n
+        // Callback pode ser o nome da função ou pode ser um array determinando no primeiro elemento o objeto e no segundo elemento o método
+        // Args são os parãmetros que são levados com a função
         call_user_func_array([$this->controladora, $this->metodoControladora], $this->parametrosURL);
     }
 

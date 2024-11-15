@@ -1,7 +1,7 @@
 <?php
+
 namespace Sgv\App\Models;
 use Sgv\App\Core\BancoDeDados;
-
 
 class Veiculo{
     //Armazena a conexão com o BD
