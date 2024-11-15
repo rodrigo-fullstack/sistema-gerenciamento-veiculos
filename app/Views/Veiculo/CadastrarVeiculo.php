@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/form/input-row.css">
     <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/form/title-content.css">
     <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/form/button-form.css">
+    <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/btn-index.css">
 </head>
 <body>
     <main class="main-content">
@@ -41,8 +42,8 @@
                 <input type="text" id="cor" name="cor" placeholder="Digite a cor do veículo">
             </div>
             <div class="input-row">
-                <label class="subtitle-content" for="num_registro">Número do Registro</label>
-                <input type="text" id="num_registro" name="num_registro" placeholder="Digite o número de registro do veículo">
+                <label class="subtitle-content" for="num_reg">Número do Registro</label>
+                <input type="text" id="num_reg" name="num_reg" placeholder="Digite o número de registro do veículo">
             </div>
 
             <div class="btn-container">
@@ -52,6 +53,6 @@
             </div>
         </form>
     </main>
-    <a href="<?= Config::BASE_URL?>">Início</a>
+    <a class="btn-index" href="<?= Config::BASE_URL?>">Início</a>
 </body>
 </html>
