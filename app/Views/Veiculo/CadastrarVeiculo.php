@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
 
-    <link rel="stylesheet" href="../assets/css/main/main-content-form.css">
-    <link rel="stylesheet" href="../assets/css/form/form-container.css">
-    <link rel="stylesheet" href="../assets/css/root/root-form.css">
-    <link rel="stylesheet" href="../assets/css/form/input-row.css">
     <link rel="stylesheet" href="../assets/css/form/button-form.css">
+    <link rel="stylesheet" href="../assets/css/form/form-container.css">
+    <link rel="stylesheet" href="../assets/css/form/input-row.css">
     <link rel="stylesheet" href="../assets/css/form/title-content.css">
+    <link rel="stylesheet" href="../assets/css/main/main-content-form.css">
+    <link rel="stylesheet" href="../../Views/assets/css/root/root-form.css">
 </head>
 <body>
     <main class="main-content">
