@@ -13,13 +13,14 @@ use Sgv\App\Config\Config;
     <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/table/title-content-table.css">
     <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/table/button-table.css">
     <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/table/table.css">
+    <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/btn-index.css">
 
 </head>
 <body>
     <main class="main-content">
         <div class="table-container">
             <div class="title-content">
-                <label for="title">Tabela dos Carros</label>
+                <label for="title">Tabela dos Veículos</label>
             </div>
             <table>
                 <tr>
@@ -51,7 +52,6 @@ use Sgv\App\Config\Config;
                             </a>
                         </td>
                     </tr>
-
                 <?php endforeach; ?>
 
                 <!-- Tags Modelo
@@ -103,6 +103,8 @@ use Sgv\App\Config\Config;
                 </a>
             </div>
         </div>
+
+        <a href="<?= Config::BASE_URL?>" class="button btn-index">Início</a>
     </main>
 
 </body>

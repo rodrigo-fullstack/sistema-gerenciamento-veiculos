@@ -3,8 +3,8 @@
 $server="localhost";
 $user="root";
 $passwd="";
-$db="sistema-gerenciamento-veiculos";
+$bd="sistema-gerenciamento-veiculos";
     
-$connection = mysqli_connect($server, $user, $passwd, $db);
+$connection = mysqli_connect($server, $user, $passwd, $bd);
     
 
