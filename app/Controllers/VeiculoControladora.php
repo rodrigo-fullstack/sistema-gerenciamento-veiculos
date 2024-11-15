@@ -19,7 +19,7 @@ class VeiculoControladora extends Controladora{
         $veiculos = $veiculoModel->pegarTodosVeiculos();
 
         //Renderiza a view de todos os Veiculos (Veiculos.php)
-        $this->renderizarView('Veiculo/Veiculos', ['veiculos' => $veiculos]); //Envia também os dados obtidos através do método getAllBooks
+        $this->renderizarView('Veiculo/Veiculos', ['veiculos' => $veiculos], 'Visualizar Todos Veículos'); //Envia também os dados obtidos através do método pegarTodosVeiculos
 
     }
 
@@ -43,7 +43,7 @@ class VeiculoControladora extends Controladora{
             header('Location: ' . Config::BASE_URL . '');
         }
         //Se não receber é para exibir a view
-        $this->renderizarView('Veiculo/CadastrarVeiculo');
+        $this->renderizarView('Veiculo/CadastrarVeiculo', [], 'Cadastro de Veículos');
     }
 
     //Deletar pelo Id
