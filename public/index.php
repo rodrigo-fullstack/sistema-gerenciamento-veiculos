@@ -11,7 +11,20 @@ use Sgv\App\Core\App;
 
 $app = new App();
 
-// $db = new Database();
+// Ok
+// $bd = new BancoDeDados();
+
+// $bd = new BancoDeDados();
+
+// $bd->consulta('SELECT * FROM veiculos');
+// $bd->executar();
+// var_dump($bd->resultados());
+
+// $contr = new Controladora();
+
+// Ok
+// $veiculoModel = $contr->carregarModel('Veiculo');
+// var_dump($veiculoModel->pegarTodosVeiculos());
 
 //Exibe quantidade de registros
 // $db->query("SELECT * FROM book");
