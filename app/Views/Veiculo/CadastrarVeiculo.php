@@ -1,5 +1,7 @@
 
-
+<?php 
+    use Sgv\App\Config\Config;
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,12 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
 
-    <link rel="stylesheet" href="../assets/css/form/button-form.css">
-    <link rel="stylesheet" href="../assets/css/form/form-container.css">
-    <link rel="stylesheet" href="../assets/css/form/input-row.css">
-    <link rel="stylesheet" href="../assets/css/form/title-content.css">
-    <link rel="stylesheet" href="../assets/css/main/main-content-form.css">
-    <link rel="stylesheet" href="../../Views/assets/css/root/root-form.css">
+    <!-- Seria possível criar uma requisição HTTP com uma rota para os estilos? -->
+    <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/root/root-form.css">
+    <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/main/main-content-form.css">
+    <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/form/form-container.css">
+    <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/form/input-row.css">
+    <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/form/title-content.css">
+    <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/form/button-form.css">
 </head>
 <body>
     <main class="main-content">
@@ -49,11 +52,6 @@
             </div>
         </form>
     </main>
-
-    <?php
-    use Sgv\App\Config\Config;
-?>
-
     <a href="<?= Config::BASE_URL?>">Início</a>
 </body>
 </html>
