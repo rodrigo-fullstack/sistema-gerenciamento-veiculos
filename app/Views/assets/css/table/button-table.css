@@ -1,4 +1,4 @@
-button {
+button, a.btn-enter {
   background-color: rgba(73, 0, 0, 0.93);
   color: #FFFFFF;
   border: 4px solid rgba(67, 0, 0, 1);
