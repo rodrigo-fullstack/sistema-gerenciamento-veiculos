@@ -7,8 +7,8 @@ use Sgv\App\Config\Config;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title; ?></title>
-    <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/main/main-container-table.css">
     <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/root/root-table.css">
+    <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/main/main-container-table.css">
     <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/table/table-container.css">
     <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/table/title-content-table.css">
     <link rel="stylesheet" href="<?= Config::BASE_URL?>../app/Views/assets/css/table/button-table.css">
@@ -16,7 +16,6 @@ use Sgv\App\Config\Config;
 
 </head>
 <body>
-
     <main class="main-content">
         <div class="table-container">
             <div class="title-content">
@@ -31,8 +30,8 @@ use Sgv\App\Config\Config;
                     <th>Cor</th>
                     <th>Número de Registro</th>
                 </tr>
-
-                <? foreach($data['veiculos'] as $veiculo) : ?>
+                
+                <?php foreach($data['veiculos'] as $veiculo) : ?>
                     <!-- Criar script depois para verificar quando não tem carro cadastrado -->
                     <tr>
                         <td><?= $veiculo['id'] ?></td>
@@ -42,18 +41,18 @@ use Sgv\App\Config\Config;
                         <td><?= $veiculo['cor'] ?></td>
                         <td><?= $veiculo['num_reg']?></td>
                         <td class="btn">
-                            <a class="btn-enter" href="<?= Config::BASE_URL ?>veiculo/alterar">
+                            <a class="btn-enter" href="<?= Config::BASE_URL ?>veiculo/alterar/<?= $veiculo['id'] ?>">
                             Editar
                             </a>
                         </td>
                         <td class="btn">
-                            <a class="btn-enter" href="<?= Config::BASE_URL ?>veiculo/deletar">
+                            <a class="btn-enter" href="<?= Config::BASE_URL ?>veiculo/deletar/<?= $veiculo['id'] ?>">
                             Deletar
                             </a>
                         </td>
                     </tr>
 
-                <? endforeach; ?>
+                <?php endforeach; ?>
 
                 <!-- Tags Modelo
                 <tr>
@@ -99,9 +98,9 @@ use Sgv\App\Config\Config;
             </table>
 
             <div class="btn-container">
-                <button class="button" type="submit">
+                <a class="button" href="<?= Config::BASE_URL ?>veiculo/cadastrar" style="display:block">
                     Adicionar novo veículo
-                </button>
+                </a>
             </div>
         </div>
     </main>
