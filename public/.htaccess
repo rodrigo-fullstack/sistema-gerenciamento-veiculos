@@ -24,3 +24,6 @@ RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
 # http://localhost/book-store/public/index.php?url=book/id/8
 # Captura o valor da url para fazer o roteamento
 
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Headers "Authorization, Content-Type, x-xsrf-token, x-csrftoken, Cache-Control, X-Requested-With"
+</IfModule>

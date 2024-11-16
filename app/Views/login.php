@@ -17,7 +17,7 @@
 </head>
 <body>
     <main class="main-content">
-        <form method="post" class="login-container">
+        <form action="login_script.php" method="post" class="login-container">
             <div class="title-content">
                 <label for="title">Login</label>
             </div>
@@ -40,31 +40,32 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-        const form = document.querySelector('.login-container');
+    <!-- <script>
+        // const form = document.querySelector('.login-container');
 
-        axios.defaults.baseURL = 'http://localhost/sistema-gerenciamento-veiculos/public/';
+        // axios.defaults.baseURL = 'http://localhost/sistema-gerenciamento-veiculos/public/';
 
-        // Escutando o botão submit do formulário...
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault();
+        // // Escutando o botão submit do formulário...
+        // form.addEventListener('submit', async (event) => {
+        //     event.preventDefault();
             
-            // Coleta os dados do formulário
-            const formData = new FormData(event.target);
-            // console.log(formData.get('email'))
-            // console.log(formData.get('senha'))
+        //     // Coleta os dados do formulário
+        //     const formData = new FormData(event.target);
+        //     // console.log(formData.get('email'))
+        //     // console.log(formData.get('senha'))
             
-            try{
-                const {data} = await axios.post('login.php', formData);
-                console.log('JSON Web Token: ' + data);
+        //     try{
+        //         const {data} = await axios.post('login.php', formData);
+        //         console.log('JSON Web Token: ' + data);
 
-                sessionStorage.setItem('session', data);
-                window.location.href = 'nav/';
-            }catch(error){
-                console.log(error);
-                alert(error.response.data);
-            }
-        })
-    </script>
+        //         sessionStorage.setItem('session', data);
+        //         // Enviando com método get o email
+        //         window.location.href = "nav/";
+        //     }catch(error){
+        //         console.log(error);
+        //         alert(error.response.data);
+        //     }
+        // })
+    </script> -->
 </body>
 </html>

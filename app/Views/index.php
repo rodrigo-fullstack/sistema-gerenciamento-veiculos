@@ -8,6 +8,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title; ?></title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- <script>
+        // async function enviarToken(){
+        //     const authSession = sessionStorage.getItem('session');
+    
+        //     console.log(authSession);
+
+        //     const {data} = await axios.get('auth.php', {
+                
+        //     })        
+    
+        //     console.log(data);
+        // }
+
+    </script> -->
 </head>
 
 <body>
@@ -25,6 +41,7 @@
             Cadastrar novo Veiculo
         </a>
     </nav>
+
 </body>
 
 </html>

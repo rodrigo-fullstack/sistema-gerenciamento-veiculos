@@ -1,7 +1,12 @@
 <?php
 namespace Sgv\App\Controllers;
+
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
+use Dotenv\Dotenv;
 use Sgv\App\Core\Controladora;
 use Sgv\App\Config\Config;
+use Throwable;
 
 //Controlador específico dos livros
 class VeiculoControladora extends Controladora{
@@ -12,8 +17,7 @@ class VeiculoControladora extends Controladora{
     }
 
     // Método para abrir o início da aplicação
-    public function nav(){
-
+    public function nav(){ 
 
         $this->renderizarView('index');
     }
