@@ -30,6 +30,6 @@ if(!$usuario || !password_verify($senha, $usuario['senha'])){
 
 $_SESSION['id_usuario'] = $usuario['id_usuario'];
 $_SESSION['email'] = $usuario['email'];
-header('Location: nav/');
+header('Location: ' . Config::BASE_URL);
 
 

@@ -53,6 +53,12 @@
                             Deletar
                             </a>
                         </td>
+
+                        <td class="btn">
+                            <a class="btn-enter" href="<?= Config::BASE_URL ?>veiculo/id/<?= $veiculo['id'] ?>">
+                            Visualizar
+                            </a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
 

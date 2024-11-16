@@ -17,7 +17,7 @@ class VeiculoControladora extends Controladora{
     }
 
     // Método para abrir o início da aplicação
-    public function nav(){ 
+    public function inicio(){ 
 
         $this->renderizarView('index');
     }
@@ -108,6 +108,6 @@ class VeiculoControladora extends Controladora{
         session_start();
         session_destroy();
 
-        header('Location: ' . Config::BASE_URL . '');
+        header('Location: ' . Config::BASE_URL . 'login');
     }
 }

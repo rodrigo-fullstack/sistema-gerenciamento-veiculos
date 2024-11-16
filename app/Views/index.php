@@ -46,6 +46,8 @@
         </a>
 
         <a href="<?= Config::BASE_URL?>sair">Fazer Logout</a>
+
+        
     </nav>
 
 </body>
