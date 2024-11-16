@@ -85,7 +85,7 @@ class VeiculoControladora extends Controladora{
         if($_SERVER['REQUEST_METHOD'] == "POST"){
 
             //Altera os dados do livro
-            $veiculoModel->update(
+            $veiculoModel->atualizarVeiculo(
                 $id,
                 $_POST['marca'],
                 $_POST['modelo'],
@@ -101,7 +101,7 @@ class VeiculoControladora extends Controladora{
         $veiculo = $veiculoModel->pegarVeiculoPeloId($id);
 
         // Renderiza view com o livro requisitado
-        $this->renderizarView('Veiculo/AtualizarVeiculo', ['veiculo' => $veiculo]);
+        $this->renderizarView('Veiculo/AtualizarVeiculo', ['veiculo' => $veiculo], "Atualizar Veículo");
     }
 
     public function sair(){

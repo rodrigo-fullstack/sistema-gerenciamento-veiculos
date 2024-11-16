@@ -44,7 +44,7 @@
                         <td><?= $veiculo['cor'] ?></td>
                         <td><?= $veiculo['num_reg']?></td>
                         <td class="btn">
-                            <a class="btn-enter" href="<?= Config::BASE_URL ?>veiculo/alterar/<?= $veiculo['id'] ?>">
+                            <a class="btn-enter" href="<?= Config::BASE_URL ?>veiculo/atualizar/<?= $veiculo['id'] ?>">
                             Editar
                             </a>
                         </td>
