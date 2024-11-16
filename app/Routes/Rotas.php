@@ -6,10 +6,10 @@ class Rotas{
     const ROTAS = [
         '' => ['controladora' => 'VeiculoControladora', 'metodo' => 'login'],
 
-        'login' => ['controladora' => 'VeiculoControladora', 'metodo' => 'login'],
+        'entrar' => ['controladora' => 'VeiculoControladora', 'metodo' => 'login'],
         
         //Rota para o index
-        'nav' => ['controladora' => 'VeiculoControladora', 'metodo' => 'inicio'],
+        'nav' => ['controladora' => 'VeiculoControladora', 'metodo' => 'nav'],
 
         //Também verifica todos os livros
         'veiculos' => ['controladora' => 'VeiculoControladora', 'metodo' => 'todosVeiculos'],

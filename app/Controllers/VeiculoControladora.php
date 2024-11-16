@@ -7,11 +7,14 @@ use Sgv\App\Config\Config;
 class VeiculoControladora extends Controladora{
     // Método para abrir o login do usuário...
     public function login(){
+
         $this->renderizarView('login');
     }
 
     // Método para abrir o início da aplicação
     public function nav(){
+
+
         $this->renderizarView('index');
     }
 

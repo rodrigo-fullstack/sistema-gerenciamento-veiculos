@@ -1,15 +1,19 @@
+<?php
+    use Sgv\App\Config\Config;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../app/Views/assets/css/main/main-content-login.css">
-    <link rel="stylesheet" href="../app/Views/assets/css/login/login-container.css">
-    <link rel="stylesheet" href="../app/Views/assets/css/root/root-login.css">
-    <link rel="stylesheet" href="../app/Views/assets/css/login/input-row-login.css">
-    <link rel="stylesheet" href="../app/Views/assets/css/login/button-login.css">
-    <link rel="stylesheet" href="../app/Views/assets/css/login/title-content-login.css">
+    <link rel="stylesheet" type="text/css" href="../app/Views/assets/css/main/main-content-login.css">
+    <link rel="stylesheet" type="text/css" href="../app/Views/assets/css/login/login-container.css">
+    <link rel="stylesheet" type="text/css" href="../app/Views/assets/css/root/root-login.css">
+    <link rel="stylesheet" type="text/css" href="../app/Views/assets/css/login/input-row-login.css">
+    <link rel="stylesheet" type="text/css" href="../app/Views/assets/css/login/button-login.css">
+    <link rel="stylesheet" type="text/css" href="../app/Views/assets/css/login/title-content-login.css">
 </head>
 <body>
     <main class="main-content">
@@ -37,17 +41,29 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        const form =document.querySelector('.login-container');
+        const form = document.querySelector('.login-container');
 
-        axios.defaults.baseURL = 'http://localhost';
+        axios.defaults.baseURL = 'http://localhost/sistema-gerenciamento-veiculos/public/';
 
         // Escutando o botão submit do formulário...
         form.addEventListener('submit', async (event) => {
             event.preventDefault();
             
-            console.log('Hello World');
+            // Coleta os dados do formulário
+            const formData = new FormData(event.target);
+            // console.log(formData.get('email'))
+            // console.log(formData.get('senha'))
+            
+            try{
+                const {data} = await axios.post('login.php', formData);
+                console.log('JSON Web Token: ' + data);
 
-
+                sessionStorage.setItem('session', data);
+                window.location.href = 'nav/';
+            }catch(error){
+                console.log(error);
+                alert(error.response.data);
+            }
         })
     </script>
 </body>
