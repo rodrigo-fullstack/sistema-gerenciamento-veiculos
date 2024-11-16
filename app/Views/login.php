@@ -34,5 +34,21 @@
             </div>
         </form>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const form =document.querySelector('.login-container');
+
+        axios.defaults.baseURL = 'http://localhost';
+
+        // Escutando o botão submit do formulário...
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            
+            console.log('Hello World');
+
+
+        })
+    </script>
 </body>
 </html>
