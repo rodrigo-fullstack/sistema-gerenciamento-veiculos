@@ -103,4 +103,11 @@ class VeiculoControladora extends Controladora{
         // Renderiza view com o livro requisitado
         $this->renderizarView('Veiculo/AtualizarVeiculo', ['veiculo' => $veiculo]);
     }
+
+    public function sair(){
+        session_start();
+        session_destroy();
+
+        header('Location: ' . Config::BASE_URL . '');
+    }
 }

@@ -1,6 +1,10 @@
 <?php
     use Sgv\App\Config\Config;
+
+    require "auth.php";
 ?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -40,6 +44,8 @@
         <a href="<?=Config::BASE_URL?>veiculo/cadastrar">
             Cadastrar novo Veiculo
         </a>
+
+        <a href="<?= Config::BASE_URL?>sair">Fazer Logout</a>
     </nav>
 
 </body>

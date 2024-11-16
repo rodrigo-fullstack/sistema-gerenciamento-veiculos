@@ -1,5 +1,7 @@
 <?php
-use Sgv\App\Config\Config;
+    use Sgv\App\Config\Config;
+
+    require 'auth.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

@@ -24,7 +24,11 @@ class Rotas{
         'veiculo/deletar' => ['controladora' => 'VeiculoControladora', 'metodo' => 'deletar'],
 
         //Altera o livro
-        'veiculo/alterar' => ['controladora' => 'VeiculoControladora', 'metodo' => 'alterar']
+        'veiculo/alterar' => ['controladora' => 'VeiculoControladora', 'metodo' => 'alterar'],
+
+        'sair' => ['controladora' => 'VeiculoControladora', 'metodo' => 'sair']
+
+
     ];
 
 }

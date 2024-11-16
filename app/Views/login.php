@@ -39,7 +39,7 @@
         </form>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
     <!-- <script>
         // const form = document.querySelector('.login-container');
 
