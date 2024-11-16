@@ -4,8 +4,12 @@ namespace Sgv\App\Routes;
 
 class Rotas{
     const ROTAS = [
+        '' => ['controladora' => 'VeiculoControladora', 'metodo' => 'login'],
+
+        'login' => ['controladora' => 'VeiculoControladora', 'metodo' => 'login'],
+        
         //Rota para o index
-        '' => ['controladora' => 'VeiculoControladora', 'metodo' => 'inicio'],
+        'nav' => ['controladora' => 'VeiculoControladora', 'metodo' => 'inicio'],
 
         //Também verifica todos os livros
         'veiculos' => ['controladora' => 'VeiculoControladora', 'metodo' => 'todosVeiculos'],

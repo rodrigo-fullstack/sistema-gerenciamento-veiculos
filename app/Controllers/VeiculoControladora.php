@@ -5,8 +5,13 @@ use Sgv\App\Config\Config;
 
 //Controlador específico dos livros
 class VeiculoControladora extends Controladora{
+    // Método para abrir o login do usuário...
+    public function login(){
+        $this->renderizarView('login');
+    }
+
     // Método para abrir o início da aplicação
-    public function inicio(){
+    public function nav(){
         $this->renderizarView('index');
     }
 
