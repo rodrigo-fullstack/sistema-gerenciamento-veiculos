@@ -7,7 +7,7 @@ Sistema de Gerenciamento de Veículos, Projeto de Fullstack com padrão MVC impl
 
 * Miqueias Silva Santos: BackEnd conexão com BD, Cadastro dos Dados.
 
-* Rodrigo Pereira Faria: BackEnd Implementação do padrão MVC, roteamento e Autenticação, Documentação e Cenáriod e Teste.
+* Rodrigo Pereira Faria: BackEnd Implementação do padrão MVC, roteamento e Autenticação, Documentação e Cenários de Teste.
 
 ## Como executar projeto:
 
